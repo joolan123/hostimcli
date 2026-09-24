@@ -66,7 +66,6 @@ ENV GOPATH=/workspace/.go \
     NPM_CONFIG_PREFIX=/workspace/.npm-global \
     PATH=/usr/local/go/bin:/workspace/.go/bin:/workspace/.npm-global/bin:$PATH
 
-COPY examples /opt/examples
 COPY start.sh /usr/local/bin/start-workspace
 RUN chmod 0755 /usr/local/bin/start-workspace
 
