@@ -12,7 +12,7 @@ Use these values if you create the app in the Hostim dashboard instead of using 
 | Health check | `/healthz` |
 | Replicas | `1` |
 | App plan | At least about 1 GB RAM recommended; `sa-1-1` is the CLI documentation example |
-| Environment variable | `PASSWORD=<a long random password>` |
+| Environment variable | `PASSWORD=hostimpass123` |
 | Volume | Create a persistent volume (`vol-1` is documented as 5 GB) |
 | Volume mount path | `/workspace` |
 | Start/command override | Leave empty; the Docker image already starts itself |
