@@ -1,0 +1,30 @@
+id: linux-workspace
+name: Linux Workspace
+description: Browser VS Code terminal with persistent workspace and Go/Python/Node tools
+components:
+  volumes:
+    - name: workspace-data
+      plan: vol-1
+  postgres: []
+  mysql: []
+  redis: []
+  apps:
+    - name: workspace
+      plan: sa-1-1
+      public: true
+      replicas: 1
+      httpPort: 8080
+      healthCheckPath: /healthz
+      domains: []
+      deploymentSource:
+        type: git
+        git:
+          url: https://github.com/REPLACE_WITH_YOUR_USERNAME/REPLACE_WITH_YOUR_REPO
+          branch: main
+          dockerfilepath: Dockerfile
+      envVars:
+        - name: PASSWORD
+          value: GENERATE_ME_32
+      volumeMounts:
+        - name: workspace-data
+          mountPath: /workspace
